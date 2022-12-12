@@ -1,6 +1,7 @@
 import os
 import pprint 
 import openai
+import wget
 import pyperclip as pc
 from pathlib import Path
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
@@ -9,7 +10,7 @@ openai.Model.list()
 
 local_download_path = str(Path.home()/"Downloads")
 response = openai.Image.create(
-  prompt="lakshadweep island with blue water",
+  prompt="beautiful photo of blue jelly fish in water",
   n=1,
   size="1024x1024"
 )
