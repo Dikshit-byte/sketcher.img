@@ -2,10 +2,12 @@ import os
 import pprint 
 import openai
 import pyperclip as pc
+from pathlib import Path
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.list()
 
+local_download_path = str(Path.home()/"Downloads")
 response = openai.Image.create(
   prompt="lakshadweep island with blue water",
   n=1,
@@ -15,4 +17,5 @@ response = openai.Image.create(
 # pprint.pprint(dict(response),width=1)
 
 img_url = response['data'][0]['url']
-pc.copy(img_url)    
+pc.copy(img_url)
+wget.download(img_url,local_download_path)
