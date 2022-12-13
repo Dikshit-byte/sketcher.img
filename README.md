@@ -1,2 +1,2 @@
 # sketcher.img
-In testing will soon available within some days.
+In testing, will be available within some days.
