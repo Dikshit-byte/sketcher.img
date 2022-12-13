@@ -3,10 +3,12 @@ from pickletools import optimize
 import pprint
 from numpy import quantile 
 import openai
+from typer import prompt
 import wget
 import pyperclip as pc
 from pathlib import Path
 from PIL import Image
+import sys,time,os
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.list()
@@ -55,3 +57,28 @@ local_download_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper"
 # image_path1 = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\5.png"
 # im = Image.open(image_path1)
 # im.show()
+
+
+
+
+# codex AI
+
+prompts = input("Enter your query :: ")
+
+response = openai.Completion.create(
+    engine = 'davinci-codex',
+    max_tokens=1024*2,
+    prompt = prompts,
+    temperature = 0, #risk taking ability, influencing creativity
+    top_p=1.0, #Influencing sampling
+    frequency_penalty=0.0, #Penalities for repeated tokens
+    presence_penalty=0.0, #Penalities for new words
+    stop=['#'] #when to stop generating stuff
+)
+
+result = response.choices[0].text
+print(result)
+for char in result:
+    sys.stdout.write(char)
+    sys.stdout.flush()
+    time.sleep(0.01)
