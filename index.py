@@ -10,19 +10,23 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.Model.list()
 
 local_download_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper"
-user_query = input("What you want ? : ")
-response = openai.Image.create(
-  prompt = user_query,
-  n=1,
-  size="1024x1024"
-)
+# user_query = input("What you want ? : ")
+# response = openai.Image.create(
+#   prompt = user_query,
+#   n=1,
+#   size="1024x1024"
+# )
 
 # photo_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\1.png"
 # im = Image.open(photo_path) 
 # im.show()
 
-resonse = openai.Image.create_variation(
-  image = open("C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\1.jpg","rb"),
+image = Image.open("C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\2.png")
+new_img = image.resize((400,400))
+new_img.save(local_download_path+'\\3.png')
+new_img.show()
+response = openai.Image.create_variation(
+  image = open("C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\3.png","rb"),
   n=1,
   size="1024x1024"
 )
