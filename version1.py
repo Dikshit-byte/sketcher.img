@@ -1,4 +1,5 @@
 import os
+from pickletools import optimize
 import pprint
 from numpy import quantile 
 import openai
@@ -46,11 +47,11 @@ local_download_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper"
 # print(photo_path)
 # im.show()
 
-image_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\4.png"
-image_file = Image.open(image_path)
+# image_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\4.png"
+# image_file = Image.open(image_path)
 
-image_file.save(local_download_path+'\\5.png',quality=95)
+# image_file.save(local_download_path+'\\5.png',quality=45,optimize=True)
 
-image_path1 = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\5.png"
-im = Image.open(image_path1)
-im.show()
+# image_path1 = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\5.png"
+# im = Image.open(image_path1)
+# im.show()
