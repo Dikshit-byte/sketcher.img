@@ -77,7 +77,7 @@ response = openai.Completion.create(
 )
 
 result = response.choices[0].text
-print(result)
+# print(result)
 for char in result:
     sys.stdout.write(char)
     sys.stdout.flush()
