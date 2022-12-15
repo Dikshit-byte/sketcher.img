@@ -15,7 +15,7 @@ from colorama import Fore
 
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+# openai.api_key = ""
 openai.Model.list()
 
 start_sequence = "\nAI:"
