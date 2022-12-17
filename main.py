@@ -15,7 +15,6 @@ from colorama import Fore
 
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-# openai.api_key = ""
 openai.Model.list()
 
 start_sequence = "\nAI:"
@@ -24,8 +23,6 @@ restart_sequence = "\nHuman: "
 local_download_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper"
 
 # global errorhandling program
-
-
 def errorHandling(param1, param2):
     while True:
         try:
