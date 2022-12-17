@@ -61,7 +61,7 @@ def Dalle():
 #^ Note: To use this function, either change the path of the Image.open(__) with image name or just shift the image on this path
 def variation_img():
     image = Image.open(
-            "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\photo.png")
+            local_download_path+"\\photo.png")
     new_img = image.resize((400, 400))
     new_img.save(local_download_path+'\\photo.png')
     response = openai.Image.create_variation(
@@ -72,10 +72,10 @@ def variation_img():
     img_url = response['data'][0]['url']
     wallpaper = wget.download(img_url, local_download_path)
     words = wallpaper.split("/")
-    photo_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\"+words[1]
+    photo_path = local_download_path+"\\"+words[1]
     image = Image.open(photo_path)
     image.save(local_download_path+words[1], quality=45, optimize=True)
-    image_path1 = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\"+words[1]
+    image_path1 = local_download_path+"\\"+words[1]
     image = Image.open(image_path1)
     image.show()
 
