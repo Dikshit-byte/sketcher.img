@@ -14,7 +14,9 @@ openai.Model.list()
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
 
-local_download_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper"
+user_directory = os.path.expanduser('~')
+user_path = user_directory.split('\\')
+local_download_path = "user_path[0]\\user_path[1]\\user_path[2]\\AppData\\Local\\OpenAIWallpaper"
 
 # global errorhandling program
 def errorHandling(param1, param2):
@@ -36,6 +38,7 @@ def Dalle():
     while (True):
         user_query = input(
             Fore.CYAN+"\nEnter any topic or query realted to the drawing you want : ")
+        #model    
         response = openai.Image.create(
             prompt=user_query,
             n=1,
@@ -44,7 +47,7 @@ def Dalle():
         img_url = response['data'][0]['url']
         wallpaper = wget.download(img_url, local_download_path)
         words = wallpaper.split("/")
-        photo_path = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\" + \
+        photo_path = local_download_path + \
             words[1]
         image = Image.open(photo_path)
         image.save(local_download_path+words[1], quality=45, optimize=True)
@@ -54,6 +57,8 @@ def Dalle():
         image.show()
 
 
+# This function makes the variation of photos
+#^ Note: To use this function, either change the path of the Image.open(__) with image name or just shift the image on this path
 def variation_img():
     image = Image.open(
             "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\photo.png")
