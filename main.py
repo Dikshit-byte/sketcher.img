@@ -79,6 +79,8 @@ def variation_img():
     image = Image.open(image_path1)
     image.show()
 
+
+#This function write code for almost anything only in python
 def codex_ai():
     while(True):
         prompts = input(Fore.GREEN+"\n\nEnter your query : ")
@@ -98,6 +100,7 @@ def codex_ai():
             sys.stdout.flush()
             time.sleep(0.01)
 
+#This function works on gpt-2 model and can interact with our queries and get us the most suitable answer of our question
 def assistant_ai():
     while(True):
         prompt = input(Fore.RED+"\n\nAsk me anything : ")
@@ -116,6 +119,10 @@ def assistant_ai():
             sys.stdout.write(Fore.YELLOW+char)
             sys.stdout.flush()
             time.sleep(0.01)
+
+
+
+# & Main function .....
 
 if __name__ == '__main__':
     print("How would u like to surf my new project ?\n1.Text to Image (warning: model is too stupid for now )\n2.Image Variations\n3.Codex Api (kind of mysterious tool for code)\n4.Ask for anything (This one is kind of addictive)")
