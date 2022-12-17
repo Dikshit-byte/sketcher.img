@@ -1,16 +1,10 @@
 import os
-from pickletools import optimize
-import pprint
-from numpy import quantile
 import openai
 import wget
-import pyperclip as pc
-from pathlib import Path
 from PIL import Image
 import sys
 import time
 import os
-import colorama
 from colorama import Fore
 
 openai.organization = "org-XY7tvMhByFMbnaHiVRXoQjab"
@@ -37,6 +31,7 @@ def errorHandling(param1, param2):
             raise Exception("Thanks for coming!!")
 
 
+# This function feeding from Dall-e API and convert text to drawing
 def Dalle():
     while (True):
         user_query = input(
