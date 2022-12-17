@@ -16,7 +16,6 @@ Follow this step to run :
 
 HOPE YOU WILL ENJOY IT!!🔥🔥
 
-[NOTE] : This code will work for only windows based system. To run this code on mac or linux please search the applescript or any related script and replace it with my "ctypes.windll.user32.SystemParametersInfoW(20, 0, wallpaper, 0) along with specifying the file name "wallpaper"
-
+[NOTE] : This code will work for only windows based system. To run this code on mac or linux please specify the path or change the modules as per your os requirements.
 
                                                                                                 ~Dikshit singh
