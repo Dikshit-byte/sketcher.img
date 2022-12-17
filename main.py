@@ -16,7 +16,7 @@ restart_sequence = "\nHuman: "
 
 user_directory = os.path.expanduser('~')
 user_path = user_directory.split('\\')
-local_download_path = "user_path[0]\\user_path[1]\\user_path[2]\\AppData\\Local\\OpenAIWallpaper"
+local_download_path = user_path[0]+"\\"+user_path[1]+"\\"+user_path[2]+"\\AppData\\Local\\OpenAIWallpaper"
 
 # global errorhandling program
 def errorHandling(param1, param2):
@@ -47,11 +47,11 @@ def Dalle():
         img_url = response['data'][0]['url']
         wallpaper = wget.download(img_url, local_download_path)
         words = wallpaper.split("/")
-        photo_path = local_download_path + \
+        photo_path = local_download_path+"\\" + \
             words[1]
         image = Image.open(photo_path)
         image.save(local_download_path+words[1], quality=45, optimize=True)
-        image_path1 = "C:\\Users\\singh\\AppData\\Local\\OpenAIWallpaper\\" + \
+        image_path1 = local_download_path+"\\" + \
             words[1]
         image = Image.open(image_path1)
         image.show()
